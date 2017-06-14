@@ -58,7 +58,8 @@ const router = require("./routes/router");
 - 代码2:
 
 ```javascript
-//实现静态目录，切忌，此处到static代表服务器指定到静态根目录。引用文件时：http://yourdomain/css/style.css，这里不需要static
+//实现静态目录，切忌，此处到static代表服务器指定到静态根目录。
+//引用文件时：http://yourdomain/css/style.css，这里不需要static
 app.use(koaStatic(
 	path.resolve(__dirname, "./static")
 ));
