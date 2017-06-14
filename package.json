@@ -1,0 +1,46 @@
+{
+	"name": "sexcc",
+	"version": "1.0.0",
+	"description": "sexcc",
+	"main": "app.js",
+	"scripts": {
+		"start": "cross-env NODE_ENV=development && nodemon app.js",
+		"dev": "cross-env NODE_ENV=development && webpack --config ./build/webpack.dev.config.js --progress --colors --watch",
+		"test": "mocha"
+	},
+	"repository": {
+		"type": "git",
+		"url": "null"
+	},
+	"keywords": [
+		"sexcc"
+	],
+	"author": "roninliu@foxmail.com",
+	"license": "ISC",
+	"dependencies": {
+		"handlebars": "^4.0.10",
+		"iview": "^2.0.0-rc.17",
+		"koa": "^2.2.0",
+		"koa-router": "^7.2.0",
+		"koa-static": "^3.0.0",
+		"koa-views": "^6.0.2",
+		"md5": "^2.2.1",
+		"vue": "^2.3.4"
+	},
+	"devDependencies": {
+		"babel-core": "^6.25.0",
+		"babel-loader": "^7.0.0",
+		"cross-env": "^5.0.1",
+		"css-loader": "^0.28.4",
+		"extract-text-webpack-plugin": "^2.1.2",
+		"file-loader": "^0.11.2",
+		"html-webpack-plugin": "^2.28.0",
+		"nodemon": "^1.11.0",
+		"style-loader": "^0.18.2",
+		"url-loader": "^0.5.9",
+		"vue-loader": "^12.2.1",
+		"vue-template-compiler": "^2.3.4",
+		"webpack": "^2.6.1",
+		"webpack-merge": "^4.1.0"
+	}
+}
