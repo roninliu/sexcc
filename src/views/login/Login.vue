@@ -115,7 +115,7 @@ export default {
                             }
 	                    }catch(error){
 	                    	console.log(error);
-	                    	this.$Message.error("服务器异常！请稍后再试");
+	                    	this.$Message.error(error);
                     	}
                     } else {
                         this.$Message.error('请输入账户名和账户密码!');

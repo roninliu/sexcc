@@ -2,11 +2,12 @@
  * @Author: ronin
  * @Date:   2017-06-13 11:57:30
  * @Last Modified by:   ronin
- * @Last Modified time: 2017-06-15 16:38:17
+ * @Last Modified time: 2017-06-15 18:01:39
  */
 
 'use strict';
 const md5 = require("md5");
+const cookie = require("js-cookie");
 
 module.exports = {
 	async login(ctx) {
@@ -20,6 +21,7 @@ module.exports = {
 			})
 		} else {
 			if (md5("admin") === password) {
+
 				return ctx.success({
 					data: {
 						username,
