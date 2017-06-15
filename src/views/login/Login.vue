@@ -62,7 +62,7 @@
                     <Input v-model="loginForm.username" placeholder="请输入账户名"></Input>
                 </Form-item>
                 <Form-item label="账户密码" prop="password">
-                    <Input v-model="loginForm.password" placeholder="请输入邮箱"></Input>
+                    <Input type="password" v-model="loginForm.password" placeholder="请输入密码"></Input>
                 </Form-item>
                 <Form-item>
                     <Button type="primary" @click="handleSubmit('loginForm')">登录系统</Button>
@@ -73,6 +73,7 @@
 </template>
 <script>
 import api from "../../api/api";
+import md5 from "md5";
 
 export default {
     data() {
@@ -102,9 +103,16 @@ export default {
                     	try{
 	                    	let result = await api.ILogin({
 	                    		url:"/user/login",
-	                    		data:this.loginForm
+	                    		data:{
+                                    username:this.loginForm.username,
+                                    password:md5(this.loginForm.password)
+                                }
 	                    	})
-	                    	console.log(result);
+                            if(result.code !== 0){
+                                this.$Message.error(result.msg)
+                            }else{
+                                console.log(result);
+                            }
 	                    }catch(error){
 	                    	console.log(error);
 	                    	this.$Message.error("服务器异常！请稍后再试");
