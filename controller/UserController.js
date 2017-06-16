@@ -2,7 +2,7 @@
  * @Author: ronin
  * @Date:   2017-06-13 11:57:30
  * @Last Modified by:   ronin
- * @Last Modified time: 2017-06-15 18:01:39
+ * @Last Modified time: 2017-06-16 10:45:57
  */
 
 'use strict';
@@ -21,7 +21,6 @@ module.exports = {
 			})
 		} else {
 			if (md5("admin") === password) {
-
 				return ctx.success({
 					data: {
 						username,
